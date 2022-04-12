@@ -41,7 +41,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate { //, UITe
     // TODO: Add and modify the method to build expectation for the output by changing the celsiusLabel when the input field is selected
     // modify the celsiusLabel text to be a single question mark
     // modify the celsiusLabel color to be 60% red, 60% green, and 40% blue (refer to the Developer Documentation for UIColor)
-    @IBAction func textFieldDidEndEditing(_ sender: Any) {
+    @IBAction func textFieldDidBeginEditing(_ sender: Any) {
         celsiusLabel.text = "?"
         celsiusLabel.textColor = UIColor(red: 0.60, green: 0.60, blue: 0.40, alpha: 1.0)
     
