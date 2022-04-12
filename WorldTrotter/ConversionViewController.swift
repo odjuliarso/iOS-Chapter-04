@@ -28,7 +28,10 @@ class ConversionViewController: UIViewController, UITextFieldDelegate { //, UITe
         let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
         let replacementTextHasDecimalSeparator = string.range(of: ".")
         
-        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
+        let allowedCharacters = NSCharacterSet.decimalDigits.union(CharacterSet (charactersIn: "."))
+        let characterSet = NSCharacterSet(charactersIn: string)
+        
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil || !allowedCharacters.isSuperset(of: characterSet as CharacterSet) {
             return false
         } else {
             return true
